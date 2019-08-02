@@ -12,3 +12,6 @@ pip is a package manager for Python. Lets you to install any package/module/libr
 
 pip install selenium
 
+4/ See the sample test under the test folder on how to launch various 
+browsers using chrome, firefox and IE Driver
+
