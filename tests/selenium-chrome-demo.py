@@ -1,6 +1,7 @@
 from selenium import webdriver
 import unittest
 
+# Python demo - chrome driver
 class SeleniumChromeTest(unittest.TestCase):
 
     def setUp(self):
