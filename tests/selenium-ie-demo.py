@@ -1,36 +1,35 @@
-from selenium import webdriver
 import unittest
+from pages import seleniumhq_home_page
 
 #Python demo using IE Driver
 class SeleniumIETest(unittest.TestCase):
 
     def setUp(self):
-        self.driver = webdriver.Ie('../../driver/IEDriverServer.exe')
-        self.driver.get("https://www.seleniumhq.org/")
+        self.driver = seleniumhq_home_page.launch_browser("ie")
 
     def test_selenium_homepage(self):
-        self.assertEqual("Selenium - Web Browser Automation",self.driver.title)
+        self.assertEqual("Selenium - Web Browser Automation", self.driver.title)
 
     def test_about_selenium_page(self):
-        self.driver.find_element_by_partial_link_text("About").click()
+        seleniumhq_home_page.click_about_link(self.driver)
         self.assertEqual("About Selenium", self.driver.title)
 
-
     def test_search(self):
-        self.driver.find_element_by_partial_link_text("About").click()
-        self.driver.find_element_by_id("q").send_keys("Automation")
-        self.driver.find_element_by_id("submit").click()
+        seleniumhq_home_page.click_about_link(self.driver)
+        seleniumhq_home_page.enter_search(self.driver, "Automation")
+        seleniumhq_home_page.click_go(self.driver)
         self.assertEqual("Google Custom Search", self.driver.title)
 
     def test_back(self):
-        self.driver.find_element_by_partial_link_text("About").click()
-        self.driver.find_element_by_id("q").send_keys("Automation")
-        self.driver.find_element_by_id("submit").click()
-        self.driver.back()
+        seleniumhq_home_page.click_about_link(self.driver)
+        seleniumhq_home_page.enter_search(self.driver, "Automation")
+        seleniumhq_home_page.click_go(self.driver)
+        seleniumhq_home_page.click_back(self.driver)
         self.assertEqual("About Selenium", self.driver.title)
 
     def tearDown(self):
-        self.driver.close()
+        seleniumhq_home_page.close_browser(self.driver)
+
 
 if __name__ == '__main__':
-     unittest.main()
+    unittest.main()
