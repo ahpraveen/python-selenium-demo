@@ -5,7 +5,7 @@ import unittest
 class SeleniumIETest(unittest.TestCase):
 
     def setUp(self):
-        self.driver = webdriver.Ie('C:/driver/IEDriverServer.exe')
+        self.driver = webdriver.Ie('../../driver/IEDriverServer.exe')
         self.driver.get("https://www.seleniumhq.org/")
 
     def test_selenium_homepage(self):

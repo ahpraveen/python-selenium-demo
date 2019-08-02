@@ -5,7 +5,7 @@ import unittest
 class SeleniumChromeTest(unittest.TestCase):
 
     def setUp(self):
-        self.driver = webdriver.Chrome("C:/driver/chromedriver.exe")
+        self.driver = webdriver.Chrome("../../driver/chromedriver.exe")
         self.driver.get("https://www.seleniumhq.org/")
 
     def test_selenium_homepage(self):
