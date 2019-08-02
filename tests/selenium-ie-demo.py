@@ -1,6 +1,7 @@
 from selenium import webdriver
 import unittest
 
+#Python demo using IE Driver
 class SeleniumIETest(unittest.TestCase):
 
     def setUp(self):

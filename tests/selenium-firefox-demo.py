@@ -1,6 +1,7 @@
 from selenium import webdriver
 import unittest
 
+# Python demo - Firefox driver
 class SeleniumFireFoxTest(unittest.TestCase):
 
     def setUp(self):
